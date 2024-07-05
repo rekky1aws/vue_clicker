@@ -1,14 +1,15 @@
 <script setup>
 import { ref } from 'vue'
 
-const count = ref(0)
+const totalMoney = ref(0)
+const mainButtonIncVal = ref(1)
 
-function increment() {
-  count.value++
+function mainBtnClc() {
+  totalMoney.value += mainButtonIncVal.value
 }
 </script>
 
 <template>
-  <!-- make this button work -->
-  <button @click="increment">Count is: {{ count }}</button>
+  <button id="mainBtn" @click="mainBtnClc"> + {{  mainButtonIncVal }}</button>
+  <div> {{ totalMoney }} $ </div>
 </template>
