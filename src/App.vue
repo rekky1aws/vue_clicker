@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import MainButton from './components/MainButton.vue';
+import MoneyDisplay from './components/MoneyDisplay.vue';
 
 const totalMoney = ref(0)
 const mainButtonIncVal = ref(1)
@@ -10,6 +12,6 @@ function mainBtnClc() {
 </script>
 
 <template>
-  <button id="mainBtn" @click="mainBtnClc"> + {{  mainButtonIncVal }}</button>
-  <div> {{ totalMoney }} $ </div>
+  <MainButton :incVal="mainButtonIncVal" :incMain="mainBtnClc"/>
+  <MoneyDisplay :value="totalMoney"/>
 </template>
