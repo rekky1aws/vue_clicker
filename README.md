@@ -1,3 +1,3 @@
-# Vue Portfolio
+# Vue Clicker
 
-My new portfolio made using Vue.js 3.
+A little clicker project made with Vue.js 3 to learn how to really use it.
