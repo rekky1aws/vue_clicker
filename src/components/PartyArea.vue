@@ -21,6 +21,11 @@ onMounted(() => {
     canvas: canvas.value
   })
 })
+
+const onClick = () => {
+  clicker.balance ++
+  addConfetti()
+}
 </script>
 
 <template>
@@ -28,7 +33,7 @@ onMounted(() => {
     <!-- Party content -->
     <h1>Pinia's Party</h1>
     <h2>{{ clicker.balance }} confetti</h2>
-    <button>
+    <button @click="onClick">
       <div class="inner">✨</div>
     </button>
     <!-- Confetti canvas -->
