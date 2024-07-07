@@ -1,3 +1,7 @@
+<script setup>
+defineProps({ factory: { type: Object, required: true } })
+</script>
+
 <template>
   <li class="factoryListItem">
     <button
@@ -17,7 +21,3 @@
     </button>
   </li>
 </template>
-
-<script setup>
-defineProps({ factory: { type: Object, required: true } })
-</script>
