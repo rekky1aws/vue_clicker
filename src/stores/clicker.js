@@ -24,5 +24,11 @@ export const useClicker = defineStore('clicker', {
         }
       }
     }
+  },
+  getters: {
+    doubleBalance: (state) => state.balance * 2,
+    factoryFormattedOwned: (state) => (factoryID) => {
+      return `${state.factories[factoryID].owned} ${state.factories[factoryID].name}`
+    }
   }
 })
