@@ -1,3 +1,9 @@
+<script setup>
+import FactoryListItem from './FactoryListItem.vue'
+
+const factories = []
+</script>
+
 <template>
   <ul class="factoryList" aria-live="polite">
     <FactoryListItem
@@ -7,9 +13,3 @@
     />
   </ul>
 </template>
-
-<script setup>
-import FactoryListItem from './FactoryListItem.vue'
-
-const factories = []
-</script>
