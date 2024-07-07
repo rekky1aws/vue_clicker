@@ -3,9 +3,9 @@
     <button
       class="nes-container is-rounded"
     >
-      <figure class="emoji"><!-- TODO:EMOJI --></figure>
+      <figure class="emoji">{{ factory.emoji }}</figure>
       <div class="info">
-        <strong><!-- TODO:NAME --></strong>
+        <strong>{{ factory.name }}</strong>
         <small>
           <span>✨</span><!-- TODO:PRICE -->
         </small>
@@ -13,7 +13,7 @@
           - <!-- TODO:CPS -->cps
         </small>
       </div>
-      <span class="owned"><!-- TODO:OWNED --></span>
+      <span class="owned">{{ factory.owned }}</span>
     </button>
   </li>
 </template>
