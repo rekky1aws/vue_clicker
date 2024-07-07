@@ -3,8 +3,6 @@ const props = defineProps({
     incVal: Number,
     incMain: Function
 })
-
-console.log(props.incVal)
 </script>
 
 <template>
