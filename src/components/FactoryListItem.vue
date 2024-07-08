@@ -1,5 +1,9 @@
 <script setup>
+import { useClicker } from '../stores/clicker'
+
 defineProps({ factory: { type: Object, required: true } })
+
+const clicker = useClicker()
 </script>
 
 <template>
@@ -11,10 +15,11 @@ defineProps({ factory: { type: Object, required: true } })
       <div class="info">
         <strong>{{ factory.name }}</strong>
         <small>
-          <span>✨</span><!-- TODO:PRICE -->
+          <span>✨</span>
+          {{ clicker.factoryPrice(factory.id) }}
         </small>
         <small>
-          - <!-- TODO:CPS -->cps
+          - {{ clicker.factoryConfettiPerSecond(factory.id) }}cps
         </small>
       </div>
       <span class="owned">{{ factory.owned }}</span>
