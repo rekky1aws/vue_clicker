@@ -5,6 +5,7 @@ export const useClicker = defineStore('clicker', {
   state: () => {
     return {
       balance: 0,
+      tickDurationMs: 250,
       factoryPriceMultiplier: 1.05,
       factories: {
         partyPopper: {
@@ -12,7 +13,7 @@ export const useClicker = defineStore('clicker', {
           name: 'Party Popper',
           emoji: '🎉',
           basePrice: 10,
-          confettiPerSecond: 0.25,
+          cps: 0.25,
           owned: 0
         },
         balloon: {
@@ -20,7 +21,7 @@ export const useClicker = defineStore('clicker', {
           name: 'Balloon',
           emoji: '🎈',
           basePrice: 100,
-          confettiPerSecond: 2.5,
+          cps: 2.5,
           owned: 0
         }
       }
@@ -33,10 +34,20 @@ export const useClicker = defineStore('clicker', {
     },
     factoryConfettiPerSecond: (state) => (factoryID) => {
       // factoryConfettiPerSecond = confettiPerSecond * owned
-      return state.factories[factoryID].confettiPerSecond * state.factories[factoryID].owned
+      return state.factories[factoryID].cps * state.factories[factoryID].owned
     },
     canBuyFactory(state) {
       return (factoryID) => state.balance >= this.factoryPrice(factoryID)
+    },
+    confettiPerSecond: (state) => {
+      const factories = Object.keys(state.factories)
+      let sum = 0
+      
+      factories.forEach((factoryID) => {
+        sum = sum + state.factoryConfettiPerSecond(factoryID)
+      })
+
+      return sum
     }
   },
   actions: {
@@ -46,6 +57,9 @@ export const useClicker = defineStore('clicker', {
       }
       this.balance -= this.factoryPrice(factoryID)
       this.factories[factoryID].owned++
+    },
+    tick() {
+      this.balance += this.confettiPerSecond * this.tickDurationMs / 1000
     }
   }
 })
