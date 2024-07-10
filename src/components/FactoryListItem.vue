@@ -10,6 +10,8 @@ const clicker = useClicker()
   <li class="factoryListItem">
     <button
       class="nes-container is-rounded"
+      @click="clicker.buyFactory(factory.id)"
+      :disabled="!clicker.canBuyFactory(factory.id)"
     >
       <figure class="emoji">{{ factory.emoji }}</figure>
       <div class="info">

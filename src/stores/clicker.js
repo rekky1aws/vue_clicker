@@ -35,9 +35,15 @@ export const useClicker = defineStore('clicker', {
       // factoryConfettiPerSecond = confettiPerSecond * owned
       return state.factories[factoryID].confettiPerSecond * state.factories[factoryID].owned
     },
+    canBuyFactory(state) {
+      return (factoryID) => state.balance >= this.factoryPrice(factoryID)
+    }
   },
   actions: {
     buyFactory(factoryID) {
+      if (!this.canBuyFactory(factoryID)) {
+        throw new Error('Not enough money')
+      }
       this.balance -= this.factoryPrice(factoryID)
       this.factories[factoryID].owned++
     }
