@@ -30,7 +30,12 @@ export const useClicker = defineStore('clicker', {
   getters: {
     factoryPrice: (state) => (factoryID) => {
       // factoryPrice = basePrice * (factoryPriceMultiplier ** owned)
-      return state.factories[factoryID].basePrice * (state.factoryPriceMultiplier ** state.factories[factoryID].owned)
+      let price = state.factories[factoryID].basePrice;
+      for (let i = 0; i < state.factories[factoryID].owned; i++) {
+        price = Math.ceil(price * state.factoryPriceMultiplier)
+      }
+
+      return price
     },
     factoryConfettiPerSecond: (state) => (factoryID) => {
       // factoryConfettiPerSecond = confettiPerSecond * owned
