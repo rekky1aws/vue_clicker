@@ -9,8 +9,8 @@ input, button, textarea, select {
 body {
   font-family: "Press Start 2P", "Comic Sans MS", script;
   color: #ffffff;
-  background: #c2e9f6;
-  animation: party 10s infinite;
+  background: #1d1d1d;
+  /* animation: party 10s infinite; */
 }
 
 @keyframes party {
@@ -83,7 +83,7 @@ main {
 
 /* Factory list */
 .factoryList {
-  background: #f1deab;
+  background: #2c2c2c;
   list-style: none;
   padding: .5rem 1rem;
   margin: 0;
@@ -92,12 +92,12 @@ main {
 }
 
 .factoryListItem {
-  color: #3b3b3b;
+  color: #ffffff;
   padding: .5rem 0;
 }
 
 .factoryListItem button {
-  background: #f1deab;
+  background: #3d3d3d;
   width: 100%;
   position: relative;
   height: 80px;
