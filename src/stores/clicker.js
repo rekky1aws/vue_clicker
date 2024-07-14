@@ -6,6 +6,7 @@ export const useClicker = defineStore('clicker', {
     return {
       balance: 0,
       tickDurationMs: 250,
+      totalConfettis: 0,
       factoryPriceMultiplier: 1.05,
       factories: {
         partyPopper: {
@@ -64,7 +65,9 @@ export const useClicker = defineStore('clicker', {
       this.factories[factoryID].owned++
     },
     tick() {
-      this.balance += this.confettiPerSecond * this.tickDurationMs / 1000
+      const tickValue = this.confettiPerSecond * this.tickDurationMs / 1000
+      this.balance += tickValue
+      this.totalConfettis += tickValue
     }
   }
 })
