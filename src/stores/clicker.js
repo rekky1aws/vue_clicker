@@ -54,6 +54,11 @@ export const useClicker = defineStore('clicker', {
       })
 
       return sum
+    },
+    shortenConfettiValue: (state) => {
+      let textConfettiNumber = "" + state.balance
+
+      return textConfettiNumber;
     }
   },
   actions: {
