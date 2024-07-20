@@ -58,7 +58,7 @@ export const useClicker = defineStore('clicker', {
     readableBalance: (state) => {
       let textConfettiNumber = "" + state.balance
 
-      return textConfettiNumber;
+      return textConfettiNumber.substring(0,4);
     }
   },
   actions: {
@@ -68,6 +68,8 @@ export const useClicker = defineStore('clicker', {
       }
       this.balance -= this.factoryPrice(factoryID)
       this.factories[factoryID].owned++
+
+      console.log(this.readableBalance)
     },
     tick() {
       const tickValue = this.confettiPerSecond * this.tickDurationMs / 1000
