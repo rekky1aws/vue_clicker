@@ -32,7 +32,7 @@ const onClick = () => {
   <section class="partyArea">
     <!-- Party content -->
     <h1>Pinia's Party</h1>
-    <h2>{{ clicker.balance }} confetti</h2>
+    <h2>{{ clicker.readableBalance }} confetti</h2>
     <button @click="onClick">
       <div class="inner">✨</div>
     </button>
