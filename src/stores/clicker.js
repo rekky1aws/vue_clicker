@@ -70,8 +70,6 @@ export const useClicker = defineStore('clicker', {
       }
       this.balance -= this.factoryPrice(factoryID)
       this.factories[factoryID].owned++
-
-      console.log(this.readableBalance)
     },
     tick() {
       const tickValue = this.confettiPerSecond * this.tickDurationMs / 1000
