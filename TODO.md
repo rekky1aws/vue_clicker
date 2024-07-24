@@ -9,6 +9,5 @@
 ## Bonus
 
  + Change how confetti number is displayed :
-   + scientific (XXX.XX * 10^Y)
    + k, M, G, T...
    + k, M, B, T, Qa, Qi...
