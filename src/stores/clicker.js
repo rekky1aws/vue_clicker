@@ -4,7 +4,7 @@ export const useClicker = defineStore('clicker', {
   // Default state / config
   state: () => {
     return {
-      balance: 10000000000,
+      balance: 0,
       tickDurationMs: 250,
       totalConfettis: 0,
       factoryPriceMultiplier: 1.05,
@@ -56,11 +56,14 @@ export const useClicker = defineStore('clicker', {
       return sum
     },
     readableBalance: (state) => {
+      if(state.balance <= 10000) {
+        return state.balance
+      }
       let textBalance = "" + state.balance
-      textBalance = textBalance.substring(0, 4)
-      const mult = Math.floor(Math.log(state.balance / parseFloat(textBalance)))
+      const mult = textBalance.length - 1
+      textBalance = textBalance.substring(0, 3)
 
-      return textBalance + " x 10^" + mult
+      return textBalance.substring(0,1) + "." + textBalance.substring(1) + " x 10^" + mult
     }
   },
   actions: {
