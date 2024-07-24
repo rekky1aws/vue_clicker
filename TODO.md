@@ -1,10 +1,11 @@
 # TODO
 
- + Display factory buttons only confetti number exceeds price for the first time
+ + Add a way to save progress using localStorage and/or cookies.
+ + Display factory buttons only confetti number exceeds price for the first time.
  + More upgrades :
-    + Confettis per click
- + Buttons to change the number of factories you can buy at the same time (x1, x5, x10, MAX)
- + Change design elements to make it look more custom
+    + Confettis per click.
+ + Buttons to change the number of factories you can buy at the same time (x1, x5, x10, MAX).
+ + Change design elements to make it look more custom.
 
 ## Bonus
 
