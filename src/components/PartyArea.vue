@@ -32,7 +32,8 @@ const onClick = () => {
   <section class="partyArea">
     <!-- Party content -->
     <h1>Pinia's Party</h1>
-    <h2>{{ clicker.readableBalance }} 
+    <h2>
+      {{ clicker.readableBalance }} 
       <span v-if="clicker.balance <= 1">confetti</span>
       <span v-else>confettis</span>
     </h2>
