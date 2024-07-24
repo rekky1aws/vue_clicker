@@ -56,7 +56,7 @@ export const useClicker = defineStore('clicker', {
       return sum
     },
     readableBalance: (state) => {
-      let textBalance = "" + state.balance
+      let textBalance = `${state.balance}`
       
       // Returning balance if it is under 10k
       if(state.balance <= 10000) {
@@ -71,7 +71,7 @@ export const useClicker = defineStore('clicker', {
       const mult = textBalance.length - 1
       textBalance = textBalance.substring(0, 3)
 
-      return textBalance.substring(0,1) + "." + textBalance.substring(1) + " x 10^" + mult
+      return `${textBalance.substring(0,1)}.${textBalance.substring(1)}E${mult}`
     }
   },
   actions: {
