@@ -1,6 +1,5 @@
 # TODO
 
- + Function display owned confettis better (k, M, G...)
  + Display factory buttons only confetti number exceeds price for the first time
  + More upgrades :
     + Confettis per click
