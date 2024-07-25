@@ -16,7 +16,14 @@ npm install
 npm run build
 ```
 
-## HMR for Windows Users
+# Hot Module Reloading / Watch Mode
+If you want the build to refresh each time you change a file, you can buy using :
+```bash
+npm run watch
+```
+The HMR will run the builder on each file save and you can refresh on your browser to see the changes apply.
+
+### HMR for Windows Users
 
 Since HMR is not working in WSL2, run `npm run watch` in PowerShell instead.
 
