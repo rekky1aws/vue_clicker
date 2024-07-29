@@ -21,6 +21,8 @@ run()
 onUnmounted(() => {
   clearInterval(interval)
 })
+
+clicker.loadFromLocalStorage()
 </script>
 
 <template>

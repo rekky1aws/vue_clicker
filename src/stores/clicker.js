@@ -86,6 +86,28 @@ export const useClicker = defineStore('clicker', {
       const tickValue = this.confettiPerSecond * this.tickDurationMs / 1000
       this.balance += tickValue
       this.totalConfettis += tickValue
+
+      this.saveToLocalStorage({
+
+      });
+    },
+    saveToLocalStorage () {
+      // Selecting data that will be saved to localStorage
+      const data = {
+        balance: this.balance,
+        factories: this.factories,
+      }
+
+      // Sending data to localStorage
+      localStorage.setItem("pinia_party", JSON.stringify(data))
+    },
+    loadFromLocalStorage () {
+      // Parsing data from JSON in localStorage
+      const data = JSON.parse(localStorage.getItem("pinia_party"))
+
+      // Copying data in the store
+      this.balance = data.balance
+      this.factories = data.factories
     }
   }
 })
