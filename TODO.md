@@ -1,6 +1,7 @@
 # TODO
 
- + Add a way to save progress using localStorage and/or cookies.
+ + Settings menu
+   + Changeable tick duration
  + Display factory buttons only confetti number exceeds price for the first time.
  + More upgrades :
     + Confettis per click.
